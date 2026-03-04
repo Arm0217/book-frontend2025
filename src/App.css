@@ -14,7 +14,8 @@
 }
 
 .App-header {
-  background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%);
+  /* match footer's dark gradient for a unified look */
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
   padding: 2.5rem 2rem;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -31,9 +32,9 @@
   margin: 0;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #7c2d12;
+  color: #e2e8f0; /* light text for dark header */
   letter-spacing: -0.5px;
-  font-family: 'Georgia', 'Palatino', serif;
+  font-family: 'Cinzel Decorative', 'Georgia', serif; /* fantasy-flavoured font */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
@@ -51,9 +52,14 @@
   flex: 1;
 }
 
-.categories a {
-  color: #7c2d12;
+.categories a,
+.categories button {
+  color: #e2e8f0; /* light links for dark header */
+  background: none;
+  border: none;
   text-decoration: none;
+  cursor: pointer;
+  font-family: 'Cinzel Decorative', 'Georgia', serif; /* match header font */
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
@@ -61,9 +67,19 @@
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.categories a:hover {
-  background: rgba(124, 45, 18, 0.1);
-  color: #5a1f0f;
+.categories button.active {
+  background: rgba(226, 232, 240, 0.2);
+  color: #1a202c;
+}
+
+.categories .clear-category {
+  color: #fbbf24; /* highlight clear button */
+}
+
+.categories a:hover,
+.categories button:hover {
+  background: rgba(226, 232, 240, 0.1); /* subtle light overlay */
+  color: #ffffff;
 }
 
 .search-box {
